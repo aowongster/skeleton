@@ -1,0 +1,9 @@
+#!/bin/bash
+
+echo "Name of project:"
+read project
+
+mkdir ../$project
+cp -r * ../$project # hooray cp doesn't copy hidden files!
+# renames the directory and files to that specified
+# list of things to change
