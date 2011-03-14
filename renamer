@@ -1,16 +1,19 @@
 #!/bin/bash
 
-echo "Name of project:"
-read project
+usage() {
+  echo "Usage: $0 project_name" >&2
+}
 
-test -z $project && exit 1
+project="$1"
+test -z $project && usage && exit 1
 PDIR=../$project
 
 mkdir $PDIR
-cp -r * $PDIR
+cp -r NAME/ tests/ setup.py $PDIR
 
 cd $PDIR
 # rename dirs
+touch README
 mv NAME $project
 mv tests/NAME_tests.py tests/${project}_tests.py
 

@@ -14,6 +14,5 @@ Get these packages:
 
 
 # TODO
-
-- Don't need to copy the rename and the readme files
-- change rename script to take args and usage
+- update setup.py to latest version
+- make renamer into a callable bin script
