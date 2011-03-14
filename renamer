@@ -3,7 +3,19 @@
 echo "Name of project:"
 read project
 
-mkdir ../$project
-cp -r * ../$project # hooray cp doesn't copy hidden files!
-# renames the directory and files to that specified
-# list of things to change
+test -z $project && exit 1
+PDIR=../$project
+
+mkdir $PDIR
+cp -r * $PDIR
+
+cd $PDIR
+# rename dirs
+mv NAME $project
+mv tests/NAME_tests.py tests/${project}_tests.py
+
+# replace instances of NAME in code
+for f in setup.py tests/${project}_tests.py
+do
+  sed -i "s/NAME/$project/g" $f
+done
