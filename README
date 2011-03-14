@@ -11,3 +11,9 @@ Get these packages:
 3. nose from http://pypi.python.org/pypi/nose/
 
 4. virtualenv from http://pypi.python.org/pypi/virtualenv
+
+
+# TODO
+
+- Don't need to copy the rename and the readme files
+- change rename script to take args and usage
